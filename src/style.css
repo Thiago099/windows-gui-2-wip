@@ -1,0 +1,29 @@
+.item{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid transparent;
+    margin: 3px;
+}
+.item:hover:not(.item-selected){
+    background-color: #f1f1f1;
+    border-color: #ccc;
+}
+
+.item-thumbnail{
+    border: 1px solid rgb(110, 110, 110);
+    border-radius: 10px;
+    width: 100px;
+    height: 80px;
+    margin: 5px 10px;
+}
+.item-title{
+    font-size: 1.2em;
+}
+.item-selected{
+    background-color: #d8edfd;
+    border-color: #7bdaff;
+}
