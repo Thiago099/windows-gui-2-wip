@@ -1,44 +1,31 @@
-// import Window from "@/Window/window"
-
-
-// const content = <Window title="Hello world" parent={document.body}>Hello world</Window>
-
-import { areaSelectionTool } from "./area-selection/area-selection";
-
-
-areaSelectionTool(document.body,()=>{})
+import "./main.css"
 
 
 
-import './style.css'
+import Icon from '@/components/IconGroup/IconGroup'
 
-const datas = []
+const menu = <div parent={document.body} class="icon-container"></div>
+
+const data = effect({type:"block"})
+
+const style = (
+<select>
+    {["block","list"].map(type=><option value={type}>{type}</option>)}
+</select>
+)
+.parent(menu)
+.event("change",e=>{
+    data.type = e.target.value
+})
+
+
+const container = <div parent={document.body} class="icon-container"></div>
+
 for(var i=0;i<10;i++){
-    const data = effect({selected:false})
-    datas.push(data)
-
-    const item = 
-    <div class="item">
-        <div class="item-thumbnail"></div>
-        <div class="item-title">Hello world</div>
-    </div>
-
-    item
-    .class("item-selected",()=>data.selected)
-    .parent(document.body)
-    .effect(data)
-    .event("click",()=>{
-        if(data.selected)
-        {
-            data.selected = false
-        }
-        else
-        {
-            for(const data of datas)
-            {
-                data.selected = false
-            }
-            data.selected = true
-        }
-    })
+    <Icon 
+        parent={container} 
+        name={"icon "+i} 
+        type={() => data.type} 
+        effect={data}
+    />   
 }

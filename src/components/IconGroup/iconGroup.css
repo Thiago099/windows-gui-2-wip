@@ -1,18 +1,20 @@
 .item{
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     border-radius: 10px;
     padding: 8px;
     border: 1px solid transparent;
     margin: 3px;
 }
+
+.item-selected{
+    background-color: #d8edfd;
+    border-color: #7bdaff;
+}
+
 .item:hover:not(.item-selected){
     background-color: #f1f1f1;
     border-color: #ccc;
 }
-
 .item-thumbnail{
     border: 1px solid rgb(110, 110, 110);
     border-radius: 10px;
@@ -23,7 +25,19 @@
 .item-title{
     font-size: 1.2em;
 }
-.item-selected{
-    background-color: #d8edfd;
-    border-color: #7bdaff;
+
+
+.item-block{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.item-list{
+    display: flex;
+    flex-direction: row;
+}
+.item-list .item-thumbnail{
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
 }
