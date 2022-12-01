@@ -1,4 +1,4 @@
-import './iconGroup.css'
+import './icon.css'
 const datas = []
 export default function Icon({name,type})
 {
