@@ -3,9 +3,14 @@ import Icon from './icon/icon'
 
 export default function IconGroup()
 {
-    const window = <div></div>
-    const menu = <div parent={window} class="icon-container"></div>
-    
+    const ref = {}
+    const container = 
+    <div>
+        <div class="icon-container" id="menu" ref={ref}></div>
+        <div class="icon-container" id="content" ref={ref}></div>
+    </div>
+
+
     const data = effect({type:"block"})
     
     const style = (
@@ -13,20 +18,19 @@ export default function IconGroup()
         {["block","list"].map(type=><option value={type}>{type}</option>)}
     </select>
     )
-    .parent(menu)
+    .parent(ref.menu)
     .event("change",e=>{
         data.type = e.target.value
     })
     
-    const container = <div parent={window} class="icon-container"></div>
     
     for(var i=0;i<10;i++){
         <Icon 
-            parent={container} 
+            parent={ref.content} 
             name={"icon "+i} 
             type={() => "item-"+data.type} 
             effect={data}
         />   
     }
-    return window
+    return container
 }
