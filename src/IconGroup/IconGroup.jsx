@@ -19,9 +19,10 @@ export default function IconGroup()
     </select>
     )
     .parent(ref.menu)
-    .event("change",e=>{
-        data.type = e.target.value
-    })
+    .model(
+         ()=>data.type,
+        (value)=>data.type=value
+    )
     
     
     for(var i=0;i<10;i++){
