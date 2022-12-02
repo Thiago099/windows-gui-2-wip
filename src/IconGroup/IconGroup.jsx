@@ -24,7 +24,7 @@ export default function IconGroup()
         <Icon 
             parent={container} 
             name={"icon "+i} 
-            type={() => data.type} 
+            type={() => "item-"+data.type} 
             effect={data}
         />   
     }

@@ -6,20 +6,17 @@ export default function Icon({name,type})
     datas.push(data)
 
     const item = 
-    <div class={()=>"item item-"+type()}>
+    <div class="item">
         <div class="item-thumbnail"></div>
         <div class="item-title">{name}</div>
     </div>
 
     item
     .class("item-selected",()=>data.selected)
+    .class(type)
     .effect(data)
     .event("click",()=>{
-        if(data.selected)
-        {
-            data.selected = false
-        }
-        else
+        if(!data.selected)
         {
             for(const data of datas)
             {
@@ -28,5 +25,6 @@ export default function Icon({name,type})
             data.selected = true
         }
     })
+
     return item
 }

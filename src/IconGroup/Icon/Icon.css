@@ -17,20 +17,21 @@
 }
 .item-thumbnail{
     border: 1px solid rgb(110, 110, 110);
-    border-radius: 10px;
-    width: 100px;
-    height: 80px;
-    margin: 5px 10px;
 }
 .item-title{
     font-size: 1.2em;
 }
 
-
 .item-block{
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
+}
+.item-block .item-thumbnail{
+    border-radius: 10px;
+    width: 100px;
+    height: 80px;
+    margin: 5px 10px;
 }
 .item-list{
     display: flex;
